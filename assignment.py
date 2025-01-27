@@ -7,7 +7,11 @@ def format_string(name, age):
     Returns:
         str: Formatted string
     """
-    pass
+
+    return("My name is {name} and I am {age} years old")
+
+print(format_string("Prakash Pandey", 33))
+
 
 def conditional_check(number):
     """
@@ -17,7 +21,16 @@ def conditional_check(number):
     Returns:
         str: "Greater", "Lesser", or "Equal"
     """
-    pass
+    if number > 10:
+        print("Greater")
+    elif number < 10:
+        print("Lesser")
+    else:
+        print("Equal")
+
+number = input(int("Enter a number to check "))
+result = conditional_check(number)
+print(result)
 
 def loop_sum(n):
     """
@@ -27,7 +40,13 @@ def loop_sum(n):
     Returns:
         int: Sum of numbers
     """
-    pass
+    sum = 0
+    for i in range(1, n + 1):
+        sum += i
+    return sum
+
+n = input(int("Enter the number"))
+print(loop_sum(n))
 
 def list_operations(numbers):
     """
@@ -37,7 +56,28 @@ def list_operations(numbers):
     Returns:
         tuple: (sum, max, min)
     """
-    pass
+    if not numbers:
+        return 0, None, None
+
+    sum = 0  
+    max_num = numbers[0]  
+    min_num = numbers[0] 
+
+    for num in numbers:
+        total += num  
+        if num > max_num:
+            max_num = num
+        if num < min_num: 
+            min_num = num
+
+    return total, max_num, min_num
+
+numbers = [1, 3, 5, 4, 2]
+result = list_operations(numbers)
+print(result)
+
+
+        
 
 def dict_operations(students_dict):
     """
@@ -47,7 +87,16 @@ def dict_operations(students_dict):
     Returns:
         list: Names of students with scores > 80
     """
-    pass
+    student_score_above80 = []
+    for student, score in students_dict.items():
+        if score > 80:
+            student_score_above80.append(student)
+    return student_score_above80
+
+student_percentage = {'Prakash Pandey': 83, 'Ram Shrestha': 63, 'Shreya Shrestha': 81, 'Emul Ofz': 73}
+result = dict_operations(student_percentage)
+print(result)
+
 
 def set_operations(list1, list2):
     """
