@@ -8,9 +8,12 @@ def format_string(name, age):
         str: Formatted string
     """
 
-    return("My name is {name} and I am {age} years old")
+    return(f"My name is {name} and I am {age} years old") # returing the formatted print statement
 
-print(format_string("Prakash Pandey", 33))
+print(format_string("Prakash Pandey", 33)) 
+
+
+
 
 
 def conditional_check(number):
@@ -21,6 +24,8 @@ def conditional_check(number):
     Returns:
         str: "Greater", "Lesser", or "Equal"
     """
+    # using if elif statement for conditional check
+
     if number > 10:
         print("Greater")
     elif number < 10:
@@ -28,9 +33,10 @@ def conditional_check(number):
     else:
         print("Equal")
 
-number = input(int("Enter a number to check "))
+number = int(input("Enter a number to check: ")) # asking user to provide the number (prompt)
 result = conditional_check(number)
-print(result)
+
+
 
 def loop_sum(n):
     """
@@ -40,13 +46,17 @@ def loop_sum(n):
     Returns:
         int: Sum of numbers
     """
+    # using for loop
     sum = 0
-    for i in range(1, n + 1):
+    for i in range(1, n + 1): # loop starts from 1 to upper limit
         sum += i
     return sum
 
-n = input(int("Enter the number"))
+n = int(input("Enter the number: "))
 print(loop_sum(n))
+
+
+
 
 def list_operations(numbers):
     """
@@ -60,22 +70,21 @@ def list_operations(numbers):
         return 0, None, None
 
     sum = 0  
-    max_num = numbers[0]  
-    min_num = numbers[0] 
+    max_num = numbers[0]  # considering first number of numbers as max_number before comparing
+    min_num = numbers[0]  # considering first number of numbers as min_number before comparing
 
-    for num in numbers:
-        total += num  
-        if num > max_num:
+    for num in numbers: # for loop is used to compare all elements of list
+        sum += num  
+        if num > max_num:   # checking condition and updating value accordingly
             max_num = num
         if num < min_num: 
             min_num = num
 
-    return total, max_num, min_num
+    return sum, max_num, min_num
 
 numbers = [1, 3, 5, 4, 2]
 result = list_operations(numbers)
 print(result)
-
 
         
 
@@ -87,8 +96,8 @@ def dict_operations(students_dict):
     Returns:
         list: Names of students with scores > 80
     """
-    student_score_above80 = []
-    for student, score in students_dict.items():
+    student_score_above80 = [] # initializing the list to store the name of student above 80
+    for student, score in students_dict.items(): # items helps to find keys and values of dict
         if score > 80:
             student_score_above80.append(student)
     return student_score_above80
@@ -96,6 +105,8 @@ def dict_operations(students_dict):
 student_percentage = {'Prakash Pandey': 83, 'Ram Shrestha': 63, 'Shreya Shrestha': 81, 'Emul Ofz': 73}
 result = dict_operations(student_percentage)
 print(result)
+
+
 
 
 def set_operations(list1, list2):
@@ -107,7 +118,16 @@ def set_operations(list1, list2):
     Returns:
         set: Common elements
     """
-    pass
+    set1 = set(list1)
+    set2 = set(list2)
+    common_elements = set1.intersection(set2) # intersection is used to find the common elements
+    return common_elements
+list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]
+result = set_operations(list1, list2)
+print(result)
+
+
 
 def arithmetic_ops(a, b):
     """
@@ -118,7 +138,20 @@ def arithmetic_ops(a, b):
     Returns:
         dict: Results of arithmetic operations
     """
-    pass
+    results = {
+        "addition": a + b,
+        "subtraction": a - b,
+        "product": a * b,
+        "quotient": a / b if b != 0 else "undefined",   
+    }
+    return results
+
+a = float(input("Enter the First Number: "))
+b = float(input("Enter the Second Number: "))
+results = arithmetic_ops(a,b)
+print (results)
+
+
 
 def logical_ops(x, y):
     """
@@ -129,7 +162,19 @@ def logical_ops(x, y):
     Returns:
         dict: Results of logical operations
     """
-    pass
+    results = {
+        "AND": x and y, # high if all input is high
+        "OR": x or y,    # high if any one input is high
+        "NOT x": not x,  # opposite of x
+    }
+    return results
+
+x = bool(input("Enter True or False for x"))
+y = bool(input("Enter True or False for y"))
+result = logical_ops(x, y)
+print(result)
+
+
 
 def bitwise_ops(a, b):
     """
@@ -140,4 +185,14 @@ def bitwise_ops(a, b):
     Returns:
         dict: Results of bitwise operations
     """
-    pass
+    results = {
+        "AND": a & b,       
+        "OR": a | b,        
+        "XOR": a ^ b,         
+    }
+    return results
+
+a = int(input("Enter value of a"))
+b = int(input("Enter value of b"))
+result = bitwise_ops(a, b)
+print(result)
