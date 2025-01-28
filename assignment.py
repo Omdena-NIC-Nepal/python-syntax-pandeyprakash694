@@ -28,17 +28,17 @@ def conditional_check(number):
     # using if elif statement for conditional check
 
     if number > 10:
-        print("Greater")
+        return "Greater"
     elif number < 10:
-        print("Lesser")
+        return "Lesser"
     else:
-        print("Equal")
+        return "Equal"
 
 # number = int(input("Enter a number to check: ")) # asking user to provide the number (prompt)
 
-result = conditional_check(15)
-result = conditional_check(5)
-result = conditional_check(10)
+print(conditional_check(15)) 
+print(conditional_check(5)) 
+print(conditional_check(10))
 
 
 
@@ -182,9 +182,9 @@ def logical_ops(x, y):
         dict: Results of logical operations
     """
     results = {
-        "AND": x and y, # high if all input is high
-        "OR": x or y,    # high if any one input is high
-        "NOT_x": not x,  # opposite of x
+        "and": x and y, # high if all input is high
+        "or": x or y,    # high if any one input is high
+        "not_x": not x,  # opposite of x
     }
     return results
 
@@ -205,9 +205,9 @@ def bitwise_ops(a, b):
         dict: Results of bitwise operations
     """
     results = {
-        "AND": a & b,       
-        "OR": a | b,        
-        "XOR": a ^ b,         
+        "and": a & b,       
+        "or": a | b,        
+        "xor": a ^ b,         
     }
     return results
 a = 12
